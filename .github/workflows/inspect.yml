@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   testingjob:
-    runs-on: ubuntu-latests
+    runs-on: ubuntu-latest
     steps:
       - name: get the code
         uses: actions/checkout@v4
@@ -11,5 +11,7 @@ jobs:
         run: |
           uname -a
           ls -la
-          wc -l
+      - name: count
+        run: find . -type f | wc -l
+
 
