@@ -1,0 +1,15 @@
+name: testing
+on:
+  push:
+jobs:
+  testingjob:
+    runs-on: ubuntu-latests
+    steps:
+      - name: get the code
+        uses: actions/checkout@v4
+      - name: print
+        run: |
+          uname -a
+          ls -la
+          wc -l
+
