@@ -1,0 +1,10 @@
+name: workflowself
+on:
+  push:
+jobs:
+  testingjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echoing
+        run: echo "first push to hub"
+
