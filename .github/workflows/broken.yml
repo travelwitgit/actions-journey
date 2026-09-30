@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read the readme
-        run: cat README.md
+        run: cat broken.yml
       - name: Show the Python version
         run: python3 --version
