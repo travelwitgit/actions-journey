@@ -1,0 +1,16 @@
+name: print context
+on:
+  push:
+jobs:
+  contextverify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the values of context
+        run : |
+          echo "commit id ${{github.sha}}"
+          echo "repository ${{github.repository}}"
+          echo "branch name  ${{github.ref_name}}"
+          echo "event name ${{github.event_name}}"
+          echo "OS ${{runner.os}}"
+
+          
