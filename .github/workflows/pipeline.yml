@@ -3,8 +3,6 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-      runs-on: ubuntu-latest
-    needs: build
     outputs:
       version: ${{ steps.ver.outputs.version }}
     steps:
