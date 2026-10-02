@@ -13,7 +13,7 @@ jobs:
           
           
       - name: uploader
-        uses: actions/upload-artofact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: build-report
           path: report.txt
