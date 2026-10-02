@@ -1,17 +1,29 @@
 name: cacherun
+
 on:
   push:
+
 jobs:
   cachetesting:
     runs-on: ubuntu-latest
+
     steps:
-      - name: cache pip download
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check requirements file
+        run: |
+          pwd
+          ls -la
+          cat requirements.txt
+
+      - name: Cache pip download
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: pip-${{ hashFiles('requirements.txt' )}}
+          key: pip-${{ hashFiles('requirements.txt') }}
           restore-keys: |
             pip-
-      - name: install pip
-        run: pip install -r requirements.txt
 
+      - name: Install pip packages
+        run: pip install -r requirements.txt
