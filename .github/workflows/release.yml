@@ -1,0 +1,23 @@
+name: paralleljobs
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint
+        run: echo "lint job run"
+          
+
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: unittes-run
+        run: echo "unit-testing"
+
+
+
+  package:
+    runs-on: ubuntu-latest
+    needs: [lint, unit-test]
+    steps:
+      - run: echo "Fanout worked"
