@@ -1,0 +1,17 @@
+name: cacherun
+on:
+  push:
+jobs:
+  cachetesting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: cache pip download
+        uses: actions/cahec@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{('requirements.txt')}}
+          restore-keys: |
+            pip-
+      - name: install pip
+        run: pip install -r requirements.txt
+
