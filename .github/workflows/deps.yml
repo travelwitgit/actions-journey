@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: cache pip download
-        uses: actions/cahec@v4
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: pip-${{('requirements.txt')}}
